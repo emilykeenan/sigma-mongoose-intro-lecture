@@ -11,6 +11,7 @@ myApp.controller('PeopleController', ['$http', function($http) {
       $http.get('/person')
       .then(function(response) {
         self.people = response.data;
+        console.log(self.people);
       },
       function(response) {
         console.log('get error:', response);
@@ -20,7 +21,7 @@ myApp.controller('PeopleController', ['$http', function($http) {
 
     // add person
     self.addPerson = function() {
-      console.log('add person');
+      console.log('add person', self.newPerson);
       $http.post('/person', self.newPerson)
         .then(function(response) {
           // getData();

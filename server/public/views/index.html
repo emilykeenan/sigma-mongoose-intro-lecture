@@ -7,6 +7,7 @@
     <script type="text/javascript" src="/scripts/controllers/people.controller.js"></script>
 
     <link rel="stylesheet" href="/vendors/bootstrap.min.css" />
+    <link rel="stylesheet" href="/styles/styles.css" />
 </head>
 <body ng-app="myApp">
     <div class="container" ng-controller="PeopleController as peeps">
@@ -18,6 +19,17 @@
                 <input type="text" ng-model="peeps.newPerson.name" id="name" placeholder="Name" />
                 <label for="location">Location: </label>
                 <input type="text" ng-model="peeps.newPerson.location" id="location" placeholder="Location" />
+                <label for="birthDate">Birth Date: </label>
+                <input type="date" ng-model="peeps.newPerson.birthDate" id="birthDate" placeholder="Birth Date" />
+                <label for="nicenessLevel">Niceness Level: </label>
+                <select ng-model="peeps.newPerson.nicenessLevel">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <!-- <input type="text" ng-model="peeps.newPerson.nicenessLevel" id="nicenessLevel" placeholder="Niceness Level" /> -->
                 <button class="btn btn-primary" ng-click="peeps.addPerson()">Add Person</button>
             </form>
             </div>
@@ -25,9 +37,11 @@
 
         <div class="row">
           <div class="col-md-12">
-              <div ng-repeat="person in peeps.people" class="well col-md-3">
+              <div ng-repeat="person in peeps.people" class="well col-md-3" ng-class="{naughty: person.nicenessLevel < 4, nice: person.nicenessLevel >= 4}">
                 <p>{{person.name}}</p>
                 <p>{{person.location}}</p>
+                <p>{{person.birthDate}}</p>
+                <p>{{person.nicenessLevel}}</p>
                 <button ng-click="peeps.updatePerson(person._id)" class="btn btn-default">Update</button>
                 <button ng-click="peeps.deletePerson(person._id)" class="btn btn-danger">Delete</button>
             </div>
