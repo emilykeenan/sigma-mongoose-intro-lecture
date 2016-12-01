@@ -48,10 +48,12 @@ myApp.controller('PeopleController', ['$http', function($http) {
     }
 
     // update person
-    self.updatePerson = function(id) {
+    self.updatePerson = function(person) {
       console.log('update person');
-      var data = {location: 'NOT Minneapolis'};
-      $http.put('/person/' + id, data)
+      var id = person._id;
+      // var niceness = person.nicenessLevel
+      // var data = {location: 'NOT Minneapolis'};
+      $http.put('/person/' + id, person)
         .then(function(response) {
           getData();
         },

@@ -29,7 +29,6 @@
                     <option>4</option>
                     <option>5</option>
                 </select>
-                <!-- <input type="text" ng-model="peeps.newPerson.nicenessLevel" id="nicenessLevel" placeholder="Niceness Level" /> -->
                 <button class="btn btn-primary" ng-click="peeps.addPerson()">Add Person</button>
             </form>
             </div>
@@ -50,7 +49,7 @@
                   <option>4</option>
                   <option>5</option>
                 </select>
-                <button ng-click="peeps.updatePerson(person._id)" class="btn btn-default">Update</button>
+                <button ng-click="peeps.updatePerson(person)" class="btn btn-default">Update</button>
                 <button ng-click="peeps.deletePerson(person._id)" class="btn btn-danger">Delete</button>
             </div>
           </div>
