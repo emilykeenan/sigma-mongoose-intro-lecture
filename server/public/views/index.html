@@ -42,6 +42,14 @@
                 <p>{{person.location}}</p>
                 <p>{{person.birthDate}}</p>
                 <p>{{person.nicenessLevel}}</p>
+                <p>Change Niceness Level:</p>
+                <select ng-selected="person.nicenessLevel" ng-model="person.nicenessLevel">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
                 <button ng-click="peeps.updatePerson(person._id)" class="btn btn-default">Update</button>
                 <button ng-click="peeps.deletePerson(person._id)" class="btn btn-danger">Delete</button>
             </div>
