@@ -1,7 +1,63 @@
+body {
+  background: url('/assets/images/background.jpg') top left repeat;
+  background-size: 25%;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin: 0px;
+  font-family: 'Mountains of Christmas', cursive;
+  padding: 30px;
+  font-size: 90px;
+  color: #107a73;
+}
+
+form {
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+input {
+  margin-right: 10px;
+}
+
 .naughty {
-  background: #fc394a;
+  background: #e1a39f;
+  border: 4px dotted #b31b16;
+  margin: 5px;
 }
 
 .nice {
-  background: #62bcb0;
+  background: #72bab5;
+  border: 4px dotted #107a73;
+  margin: 5px;
+}
+
+.header {
+  background: url('/assets/images/headerbackground.gif');
+  background-size: 2%;
+  border: 5px solid #107a73;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top: none;
+}
+
+.submit-button {
+  background: #107a73;
+  color: white;
+  border: 3px solid #b31b16;
+}
+
+.submit-button:hover {
+  background: #b31b16;
+  border: 3px solid #107a73;
+  color: white;
+}
+
+select {
+  background: white;
+  padding: 5px;
+  margin: 40px;
 }

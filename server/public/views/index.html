@@ -7,12 +7,13 @@
     <script type="text/javascript" src="/scripts/controllers/people.controller.js"></script>
 
     <link rel="stylesheet" href="/vendors/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas|Open+Sans+Condensed:300" rel="stylesheet">
     <link rel="stylesheet" href="/styles/styles.css" />
 </head>
 <body ng-app="myApp">
     <div class="container" ng-controller="PeopleController as peeps">
+      <div class="row header">
         <h1>Mongo Nice List!</h1>
-        <div class="row">
             <div class="col-md-12">
             <form>
                 <label for="name">Name: </label>
@@ -29,7 +30,7 @@
                     <option>4</option>
                     <option>5</option>
                 </select>
-                <button class="btn btn-primary" ng-click="peeps.addPerson()">Add Person</button>
+                <button class="btn submit-button" ng-click="peeps.addPerson()">Add Person</button>
             </form>
             </div>
         </div>
@@ -41,8 +42,8 @@
                 <p>{{person.location}}</p>
                 <p>{{person.birthDate}}</p>
                 <p>{{person.nicenessLevel}}</p>
-                <p>Change Niceness Level:</p>
                 <select ng-selected="person.nicenessLevel" ng-model="person.nicenessLevel">
+                  <option value="whatever" ng-selected="true" ng-disabled="true">Choose a new Niceness Level</option>
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
